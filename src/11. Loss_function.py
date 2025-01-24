@@ -18,7 +18,7 @@ nnfs.init() # this initializes the random seed to a particular number and sets t
 
 class Layer_Dense:
     def __init__(self,n_inputs, n_neurons):
-        self.weights = 0.10 * np.random.randn(n_inputs, n_neurons)
+        self.weights = 0.01 * np.random.randn(n_inputs, n_neurons)
         self.biases = np.zeros((1, n_neurons))
     def forward(self, inputs):
         self.output = np.dot(inputs,self.weights) + self.biases
@@ -72,3 +72,10 @@ print(activation2.output)
 loss_function = Loss_CategoricalCrossEntropy()
 loss = loss_function.calculate(activation2.output, y)
 print("Loss=", loss)
+
+predictions = np.argmax(activation2.output, axis=1)
+if len(y.shape) == 2:
+    y = np.argmax(y, axis=1)
+accuracy = np.mean(predictions==y)
+# Print accuracy
+print('acc:', accuracy)
