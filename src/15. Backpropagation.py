@@ -1,3 +1,4 @@
+import numpy as np
 class Loss:
 
     # Calculates the data and regularization losses
