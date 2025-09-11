@@ -9,4 +9,9 @@ This repository contains mini Python scripts that build neural networks from scr
 
 ## Optimization
 
-- What is Random optimization? Tweaking the weights and biases by a small number, measuring loss and keeping the best weights and biases over many iterations. This technique works for simple vertical data but does not work well when the problem is more complex, i.e fitting spiral data.
+> Random optimization: Tweaking the weights and biases by a small number, measuring loss and keeping the best weights and biases over many iterations. This technique works for simple vertical data but does not work well when the problem is more complex, i.e fitting spiral data.
+
+## Backpropagation
+
+> Backpropagation: Instead of randomly tweaking weights, this method uses calculus (the chain rule) to compute the gradient of the loss with respect to each weight and bias. The network performs a forward pass to compute predictions, calculates the loss, then runs a backward pass to determine gradients. Finally, weights are updated using gradient descent. This makes training efficient and scalable, allowing neural networks to learn complex non-linear patterns such as spirals, images, or natural language.
+
